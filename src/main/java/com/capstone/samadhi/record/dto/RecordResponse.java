@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public record RecordResponse(
         Long id,
-        LocalDateTime dateTime,
+        String dateTime,
         Duration workingout_time,
         String youtube_url,
         int total_score,
@@ -24,7 +24,7 @@ public record RecordResponse(
 
         return new RecordResponse(
                 record.getId(),
-                record.getCreatedAt(),
+                record.getCreatedAt().toString(),
                 record.getWorkingout_time(),
                 record.getYoutube_url(),
                 record.getTotal_score(),

@@ -12,7 +12,7 @@ import java.util.List;
 
 public record RecordRequest(
         @NotNull(message = "운동 시간은 필수입니다.")
-        Duration workingout_time,
+        int workingout_time,
 
         @NotBlank(message = "유튜브 URL은 필수입니다.")
         String youtube_url,
@@ -29,7 +29,7 @@ public record RecordRequest(
     public Record toEntity(/*User user*/) {
 
         Record record = Record.builder()
-                .workingout_time(this.workingout_time)
+                .workingout_time(Duration.ofSeconds(workingout_time))
                 .youtube_url(this.youtube_url)
                 .total_score(this.total_score)
                 .build();
