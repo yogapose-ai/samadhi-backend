@@ -33,7 +33,7 @@ public class RecordController {
             @ApiResponse(responseCode="200", content = {@Content(schema= @Schema(implementation = ResponseDto.class)
             )})
     })
-    public ResponseEntity<ResponseDto<RecordResponse>> createMessage(@AuthenticationPrincipal UserDetails customUserDetails, @Valid @RequestBody RecordRequest request){
+    public ResponseEntity<ResponseDto<RecordResponse>> createMessage(/*@AuthenticationPrincipal UserDetails customUserDetails,*/ @Valid @RequestBody RecordRequest request){
         // Member member = memberService.findMemberByEmail(customUserDetails.getUsername());
         return ResponseEntity.ok(recordService.save(request));
     }
@@ -44,7 +44,7 @@ public class RecordController {
             @ApiResponse(responseCode="200", content = {@Content(schema= @Schema(implementation = ResponseDto.class)
             )})
     })
-    public ResponseEntity<?> getRecordById(@AuthenticationPrincipal UserDetails customUserDetails, @PathVariable("record_id") Long id){
+    public ResponseEntity<?> getRecordById(/*@AuthenticationPrincipal UserDetails customUserDetails,*/ @PathVariable("record_id") Long id){
         //Member member = memberService.findMemberByEmail(customUserDetails.getUsername());
         return ResponseEntity.ok(recordService.findById(id));
     }

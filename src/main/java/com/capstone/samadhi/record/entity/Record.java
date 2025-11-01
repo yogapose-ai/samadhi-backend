@@ -32,7 +32,7 @@ public class Record extends TimeStamp {
 //    @JoinColumn(name="userId")
 //    private User user;
 
-    @OneToMany(mappedBy = "timeline", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "record", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TimeLine> timeLineList = new ArrayList<>();
 
 //    public void addUser(User user) {

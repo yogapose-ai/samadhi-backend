@@ -11,5 +11,5 @@ import java.awt.print.Pageable;
 
 @Repository
 public interface RecordRepository extends JpaRepository<Record, Long> {
-    Page<Record> findByUser(User user, Pageable pageable);
+    //Page<Record> findByUser(User user, Pageable pageable);
 }
